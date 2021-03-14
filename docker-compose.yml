@@ -10,8 +10,8 @@ services:
       - ./haproxy:/usr/local/etc/haproxy
       - ./haproxy:/home/haproxy
     depends_on:
-      - springserver
-  springserver:
+      - gesetzeapiserver
+  gesetzeapiserver:
     image: gesetzeapi
     volumes:
       - ./laws/:/prod/laws/
