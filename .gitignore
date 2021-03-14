@@ -4,4 +4,6 @@
 .idea
 gen
 
+src/main/resources/static/index.html
+
 haproxy/ssl.pem

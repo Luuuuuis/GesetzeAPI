@@ -2,8 +2,8 @@ FROM maven:3.6-openjdk-15 as builder
 
 WORKDIR /app
 
-COPY pom.xml ./
 COPY src ./src/
+COPY pom.xml ./
 
 # Build a release artifact.
 RUN mvn package -DskipTests

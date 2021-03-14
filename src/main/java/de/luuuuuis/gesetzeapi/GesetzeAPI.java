@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-@SpringBootApplication(scanBasePackages = {"de.luuuuuis"})
+@SpringBootApplication(scanBasePackages = {"de.luuuuuis.gesetzeapi"})
 public class GesetzeAPI {
 
     public static final List<LawBook> lawBooks = new ArrayList<>();
@@ -23,7 +23,6 @@ public class GesetzeAPI {
 
     public GesetzeAPI() {
         File file = new File("/prod/laws");
-        Arrays.stream(Objects.requireNonNull(file.list())).forEach(System.out::println);
         Arrays.stream(Objects.requireNonNull(file.list())).filter(s -> s.endsWith(".json")).forEach(this::parseLaws);
     }
 
