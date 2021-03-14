@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  loadbalancer:
+    image: haproxy
+    ports:
+      - "443:443"
+      - "8484:8484"
+    volumes:
+      - ./haproxy:/usr/local/etc/haproxy
+      - ./haproxy:/home/haproxy
+    depends_on:
+      - springserver
+  springserver:
+    image: gesetzeapi
+    volumes:
+      - ./laws/:/prod/laws/

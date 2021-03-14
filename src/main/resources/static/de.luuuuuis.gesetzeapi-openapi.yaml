@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  title: GesetzeAPI
+  version: 1.0.0
+  description: An API for German law
+  x-logo:
+    url: >-
+      https://banner2.cleanpng.com/20180708/fee/kisspng-computer-icons-lady-justice-law-measuring-scales-libra-png-5b420843b407f2.5484835115310541477374.jpg
+  license: null
+  contact: null
+servers:
+  - url: 'https://gesetzeapi.luis.team'
+    description: 'Default self hosted server'
+    x-last-modified: 1615675883005
+paths:
+  /books/:
+    summary: An Overview over all available books
+    description: Lists you all available books
+    get:
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+      operationId: getLawBooks
+      summary: GET books/
+    x-last-modified: 1615675933253
+  '/books/{name}':
+    summary: Search for a law book
+    description: >-
+      Lets you search for specific law books and gets you a an overview over all
+      laws
+    get:
+      tags: [ ]
+      parameters:
+        - name: name
+          schema:
+            type: string
+          in: path
+          required: true
+      responses:
+        '200':
+          description: OK
+      operationId: getLawBook
+      summary: 'GET books/{name}'
+    parameters:
+      - $ref: '#/components/examples/error'
+        name: No Book found
+        x-last-modified: 1615676258303
+      - name: test
+        in: ''
+        example: "{\r\n    \"test\": \"test\"\r\n}"
+        description: test
+        required: true
+        deprecated: true
+        x-last-modified: 1615676498737
+    x-last-modified: 1615675978039
+  '/books/{name}/{paragraph}':
+    summary: Get a law
+    description: Lets you search for one specific law
+    get:
+      tags: [ ]
+      parameters:
+        - name: name
+          schema:
+            type: string
+          in: path
+          required: true
+        - name: paragraph
+          schema:
+            format: int32
+            type: number
+          in: path
+          required: true
+      responses:
+        '200':
+          description: OK
+      operationId: getLaw
+      summary: 'GET books/{name}/{paragraph}'
+    parameters:
+      - $ref: '#/components/examples/error'
+        name: No law found
+        x-last-modified: 1615676270280
+    x-last-modified: 1615676001675
+components:
+  responses:
+    '200':
+      description: Operation succeeded
+      x-last-modified: 1615676101192
+  examples:
+    error:
+      summary: Invalid Request
+      description: Example for a response when a client is making an invalid request
+      value:
+        status: INTERNAL_SERVER_ERROR
+        timestamp: '01-01-19700 00:00:00'
+        error: NoSuchElementException
+        message: No value present
+      x-last-modified: 1615676181083
+  securitySchemes: { }
+  schemas: { }
+  parameters: { }
+responses: { }
+tags: [ ]
+security: [ ]
+externalDocs: null

@@ -1,0 +1,7 @@
+# Project exclude paths
+/target/
+
+.idea
+gen
+
+haproxy/ssl.pem
