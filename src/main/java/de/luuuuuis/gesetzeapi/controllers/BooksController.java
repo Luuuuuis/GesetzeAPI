@@ -24,12 +24,12 @@ public class BooksController {
 
     @GetMapping("/{name}")
     public LawBook getLawBook(@PathVariable("name") String name) {
-        return LawBookInfo.builder().name(name).build().getLawBook();
+        return LawBookInfo.builder().name(name).title(name).build().getLawBook();
     }
 
     @GetMapping("/{name}/{paragraph}")
     public Law getLaw(@PathVariable("name") String name, @PathVariable("paragraph") int paragraph) {
-        return LawBookInfo.builder().name(name).build().getLawBook().getLaws().stream().filter(law ->
+        return LawBookInfo.builder().name(name).title(name).build().getLawBook().getLaws().stream().filter(law ->
                 law.getParagraph().endsWith(String.valueOf(paragraph))).findFirst().orElseThrow();
     }
 
@@ -40,7 +40,7 @@ public class BooksController {
         private final String name, title;
 
         private LawBook getLawBook() {
-            return GesetzeAPI.lawBooks.stream().filter(book -> book.getName().equalsIgnoreCase(name)).findFirst().orElseThrow();
+            return GesetzeAPI.lawBooks.stream().filter(book -> book.getName().equalsIgnoreCase(name) || book.getTitle().equalsIgnoreCase(title)).findFirst().orElseThrow();
         }
     }
 }
