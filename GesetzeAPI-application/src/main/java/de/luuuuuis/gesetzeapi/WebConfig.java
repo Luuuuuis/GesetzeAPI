@@ -1,3 +1,9 @@
+/*
+ * Developed by Luuuuuis (@realluuuuuis)
+ * Last modified 24.04.21, 23:40.
+ * Copyright (c) 2021.
+ */
+
 package de.luuuuuis.gesetzeapi;
 
 import org.springframework.context.annotation.ComponentScan;

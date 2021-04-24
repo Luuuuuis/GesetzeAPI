@@ -1,3 +1,9 @@
+/*
+ * Developed by Luuuuuis (@realluuuuuis)
+ * Last modified 24.04.21, 23:40.
+ * Copyright (c) 2021.
+ */
+
 package de.luuuuuis.gesetzeapi.exceptions;
 
 import org.springframework.beans.TypeMismatchException;

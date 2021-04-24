@@ -2,8 +2,8 @@ FROM maven:3.6-openjdk-15 as builder
 
 WORKDIR /app
 
-COPY src ./src/
-COPY pom.xml ./
+COPY GesetzeAPI-application/src/ ./src/
+COPY GesetzeAPI-application/pom.xml ./
 
 # Build a release artifact.
 RUN mvn package -DskipTests

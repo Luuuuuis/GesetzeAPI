@@ -1,7 +1,8 @@
 # Project exclude paths
-/target/
+**/target/**
 
 .idea
+**.iml
 gen
 
 haproxy/ssl.pem
