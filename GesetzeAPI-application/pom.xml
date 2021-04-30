@@ -22,10 +22,10 @@
     <version>1.0</version>
     <description>A Spring Boot REST server serving german law</description>
 
-    <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
-    </properties>
+<!--    <properties>-->
+<!--        <maven.compiler.source>15</maven.compiler.source>-->
+<!--        <maven.compiler.target>15</maven.compiler.target>-->
+<!--    </properties>-->
 
     <build>
         <finalName>GesetzeAPI</finalName>
