@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Developed by Luuuuuis (@realluuuuuis)
-  ~ Last modified 01.05.21, 20:39.
+  ~ Last modified 01.05.21, 17:51.
   ~ Copyright (c) 2021.
   -->
 
@@ -14,34 +14,28 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.luuuuis</groupId>
-    <artifactId>gesetzeapi-application</artifactId>
-    <name>GesetzeAPI-application</name>
+    <artifactId>gesetzeapi-parser</artifactId>
+    <name>GesetzeAPI-parser</name>
     <version>1.0</version>
-    <description>A Spring Boot REST server serving german law</description>
+    <description>A Jsoup parser for www.gesetze-im-internet.de</description>
 
-<!--    <properties>-->
-<!--        <maven.compiler.source>15</maven.compiler.source>-->
-<!--        <maven.compiler.target>15</maven.compiler.target>-->
-<!--    </properties>-->
+    <!--    <properties>-->
+    <!--        <maven.compiler.source>15</maven.compiler.source>-->
+    <!--        <maven.compiler.target>15</maven.compiler.target>-->
+    <!--    </properties>-->
 
     <build>
-        <finalName>GesetzeAPI</finalName>
+        <finalName>GesetzeParser</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.4.5</version>
                 <configuration>
-                    <mainClass>de.luuuuuis.gesetzeapi.GesetzeAPI</mainClass>
+                    <mainClass>de.luuuuuis.gesetzeparser.GesetzeParser</mainClass>
                     <layout>ZIP</layout>
                 </configuration>
                 <executions>
@@ -64,45 +58,20 @@
     </build>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.4.5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <version>2.4.5</version>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.4.5</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-cache</artifactId>
-            <version>2.4.5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <version>2.4.5</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.6</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.13.1</version>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Developed by Luuuuuis (@realluuuuuis)
+  ~ Last modified 01.05.21, 17:44.
+  ~ Copyright (c) 2021.
+  -->
+
+<!--
+  ~ Developed by Luuuuuis (@realluuuuuis)
   ~ Last modified 24.04.21, 23:40.
   ~ Copyright (c) 2021.
   -->
@@ -14,6 +20,7 @@
     <modules>
         <module>GesetzeAPI-application</module>
         <module>GesetzeAPI-library</module>
+        <module>GesetzeAPI-parser</module>
     </modules>
 
     <groupId>de.luuuuuis</groupId>

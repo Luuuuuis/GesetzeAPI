@@ -1,5 +1,11 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
+ * Last modified 01.05.21, 20:27.
+ * Copyright (c) 2021.
+ */
+
+/*
+ * Developed by Luuuuuis (@realluuuuuis)
  * Last modified 24.04.21, 23:40.
  * Copyright (c) 2021.
  */
@@ -11,6 +17,7 @@ import com.google.gson.GsonBuilder;
 import de.luuuuuis.gesetzeapi.model.LawBook;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,6 +29,7 @@ import java.util.List;
 import java.util.Objects;
 
 @SpringBootApplication(scanBasePackages = {"de.luuuuuis.gesetzeapi"})
+@EnableCaching
 public class GesetzeAPI {
 
     public static final List<LawBook> lawBooks = new ArrayList<>();

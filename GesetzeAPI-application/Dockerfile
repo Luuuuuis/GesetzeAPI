@@ -14,4 +14,6 @@ FROM openjdk:15
 COPY --from=builder /app/target/GesetzeAPI.jar /prod/GesetzeAPI.jar
 ADD laws /prod/laws
 
+EXPOSE 80
+
 CMD ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "--enable-preview", "/prod/GesetzeAPI.jar"]
