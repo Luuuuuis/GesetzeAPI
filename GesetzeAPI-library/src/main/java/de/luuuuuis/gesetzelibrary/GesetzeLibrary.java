@@ -1,6 +1,6 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 25.04.21, 00:47.
+ * Last modified 02.05.21, 18:10.
  * Copyright (c) 2021.
  */
 
@@ -12,7 +12,6 @@ import de.luuuuuis.gesetzelibrary.misc.DefaultInterceptor;
 import de.luuuuuis.gesetzelibrary.model.Law;
 import de.luuuuuis.gesetzelibrary.model.LawBook;
 import lombok.Builder;
-import lombok.Cleanup;
 import lombok.SneakyThrows;
 import okhttp3.*;
 import org.jetbrains.annotations.Nullable;
@@ -67,9 +66,8 @@ public class GesetzeLibrary {
     private Response call(String path) {
         Request request = new Request.Builder().url(this.baseUrl + path).build();
         Call call = client.newCall(request);
-        @Cleanup Response response = call.execute();
 
-        return response;
+        return call.execute();
     }
 
 
