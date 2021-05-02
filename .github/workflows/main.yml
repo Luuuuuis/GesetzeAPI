@@ -7,8 +7,23 @@ on:
       - "GesetzeAPI-application/**"
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 15
+      uses: actions/setup-java@v2
+      with:
+        java-version: '15'
+        distribution: 'adopt'
+    - name: run JUnit 5 Maven tests
+      run: mvn clean test
+
   deploy:
     runs-on: ubuntu-latest
+    
+    needs: [test]
     
     steps:
       - uses: actions/checkout@v2
