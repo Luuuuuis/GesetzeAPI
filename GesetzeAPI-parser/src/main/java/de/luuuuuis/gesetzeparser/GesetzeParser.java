@@ -1,6 +1,6 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 02.05.21, 13:50.
+ * Last modified 02.05.21, 14:04.
  * Copyright (c) 2021.
  */
 
@@ -59,15 +59,15 @@ public class GesetzeParser {
     public static void main(String[] args) {
         // create dir for laws
         File file = new File("laws/");
-        file.mkdir();
+        if (!file.mkdir()) {
+            System.err.println("Could not make directory");
+        }
 
         new GesetzeParser();
     }
 
     @SneakyThrows
     public Document getDocument(String url) {
-//        @Cleanup InputStream inputStream = new URL(url).openStream();
-//        return Jsoup.parse(inputStream, "UTF-8", url);
         return Jsoup.connect(url).get();
     }
 
