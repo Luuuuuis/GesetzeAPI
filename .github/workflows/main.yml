@@ -1,4 +1,4 @@
-name: CI/CD
+name: Application CI/CD
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
         java-version: '15'
         distribution: 'adopt'
     - name: run JUnit 5 Maven tests
-      run: mvn clean test
+      run: cd GesetzeAPI-application && mvn clean test
 
   deploy:
     runs-on: ubuntu-latest
