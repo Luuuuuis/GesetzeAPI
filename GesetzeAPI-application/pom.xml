@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Developed by Luuuuuis (@realluuuuuis)
-  ~ Last modified 01.05.21, 20:39.
-  ~ Copyright (c) 2021.
-  -->
-
-<!--
-  ~ Developed by Luuuuuis (@realluuuuuis)
-  ~ Last modified 25.04.21, 00:47.
+  ~ Last modified 02.05.21, 13:52.
   ~ Copyright (c) 2021.
   -->
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -25,13 +19,13 @@
     <groupId>de.luuuuis</groupId>
     <artifactId>gesetzeapi-application</artifactId>
     <name>GesetzeAPI-application</name>
-    <version>1.0</version>
+    <version>1.1</version>
     <description>A Spring Boot REST server serving german law</description>
 
-<!--    <properties>-->
-<!--        <maven.compiler.source>15</maven.compiler.source>-->
-<!--        <maven.compiler.target>15</maven.compiler.target>-->
-<!--    </properties>-->
+    <!--    <properties>-->
+    <!--        <maven.compiler.source>15</maven.compiler.source>-->
+    <!--        <maven.compiler.target>15</maven.compiler.target>-->
+    <!--    </properties>-->
 
     <build>
         <finalName>GesetzeAPI</finalName>

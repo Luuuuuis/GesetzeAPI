@@ -1,12 +1,6 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 01.05.21, 19:21.
- * Copyright (c) 2021.
- */
-
-/*
- * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 01.05.21, 18:06.
+ * Last modified 02.05.21, 13:50.
  * Copyright (c) 2021.
  */
 
