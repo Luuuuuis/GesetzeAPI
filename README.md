@@ -2,4 +2,5 @@
 # GesetzeAPI
 An API to get German laws
 
-Docs at https://gesetzeapi.luis.team
+Docs API: https://gesetzeapi.luis.team
+Docker image: https://hub.docker.com/r/luuuuuis/gesetzeapi
