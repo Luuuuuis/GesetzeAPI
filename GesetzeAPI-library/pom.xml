@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Developed by Luuuuuis (@realluuuuuis)
-  ~ Last modified 25.04.21, 00:47.
+  ~ Last modified 02.06.21, 00:39.
   ~ Copyright (c) 2021.
   -->
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -13,7 +13,7 @@
     <groupId>de.luuuuuis</groupId>
     <artifactId>gesetzeapi-library</artifactId>
     <name>GesetzeAPI-library</name>
-    <version>1.1</version>
+    <version>1.2</version>
     <description>A Java REST client to query german laws from the GesetzeAPI</description>
 
     <url>https://github.com/Luuuuuis/GesetzeAPI</url>

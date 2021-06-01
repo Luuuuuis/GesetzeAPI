@@ -1,6 +1,6 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 02.05.21, 13:50.
+ * Last modified 02.06.21, 00:43.
  * Copyright (c) 2021.
  */
 
@@ -50,7 +50,10 @@ public class BooksController {
         private final String name, title;
 
         private LawBook getLawBook() {
-            return GesetzeAPI.lawBooks.stream().filter(book -> book.getName().equalsIgnoreCase(name) || book.getTitle().equalsIgnoreCase(title)).findFirst().orElseThrow();
+            return GesetzeAPI.lawBooks.stream().filter(book ->
+                    book.getName().equalsIgnoreCase(name)
+                            || book.getName().split(" ")[0].equalsIgnoreCase(name)
+                            || book.getTitle().equalsIgnoreCase(title)).findFirst().orElseThrow();
         }
     }
 }

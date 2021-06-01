@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Developed by Luuuuuis (@realluuuuuis)
-  ~ Last modified 02.05.21, 13:52.
+  ~ Last modified 02.06.21, 00:31.
   ~ Copyright (c) 2021.
   -->
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -19,7 +19,7 @@
     <groupId>de.luuuuis</groupId>
     <artifactId>gesetzeapi-application</artifactId>
     <name>GesetzeAPI-application</name>
-    <version>1.1</version>
+    <version>1.2</version>
     <description>A Spring Boot REST server serving german law</description>
 
     <!--    <properties>-->
@@ -102,7 +102,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.18</version>
+            <version>1.18.20</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
