@@ -1,4 +1,4 @@
-name: Application CI/CD
+name: CD Dockerhub
 
 on:
   workflow_dispatch:
@@ -7,20 +7,7 @@ on:
     paths:
       - "GesetzeAPI-application/**"
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v2
-      - name: CapRover App Deploy
-        uses: floms/action-caprover@v1
-        with:
-          host: https://captain.luis.team
-          password: ${{ secrets.CAPROVER_PASSWORD }}
-          app: gesetzeapi
-          branch: master
-          
+jobs:    
   push_to_dockerhub_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
