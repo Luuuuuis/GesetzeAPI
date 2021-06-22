@@ -1,4 +1,4 @@
-name: CD Application to server
+name: CD Application to caprover
 
 on:
   workflow_dispatch:
