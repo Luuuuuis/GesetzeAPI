@@ -1,4 +1,4 @@
-name: Application CI/CD
+name: CD Application to server
 
 on:
   workflow_dispatch:
@@ -20,18 +20,3 @@ jobs:
           password: ${{ secrets.CAPROVER_PASSWORD }}
           app: gesetzeapi
           branch: master
-          
-  push_to_dockerhub_registry:
-    name: Push Docker image to Docker Hub
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
-      - name: Push to Docker Hub
-        uses: docker/build-push-action@v1
-        with:
-          username: luuuuuis
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: luuuuuis/gesetzeapi
-          tag_with_ref: true
