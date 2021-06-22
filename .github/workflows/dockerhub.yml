@@ -1,0 +1,24 @@
+name: CD Dockerhub
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+    paths:
+      - "GesetzeAPI-application/**"
+
+jobs:    
+  push_to_dockerhub_registry:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: luuuuuis
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: luuuuuis/gesetzeapi
+          tag_with_ref: true
