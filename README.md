@@ -1,4 +1,5 @@
-[![CI/CD](https://github.com/Luuuuuis/GesetzeAPI/actions/workflows/main.yml/badge.svg)](https://github.com/Luuuuuis/GesetzeAPI/actions/workflows/main.yml)
+[![CD Application to caprover](https://github.com/Luuuuuis/GesetzeAPI/actions/workflows/caprover.yml/badge.svg)](https://github.com/Luuuuuis/GesetzeAPI/actions/workflows/caprover.yml)
+[![CD Dockerhub](https://github.com/Luuuuuis/GesetzeAPI/actions/workflows/dockerhub.yml/badge.svg)](https://github.com/Luuuuuis/GesetzeAPI/actions/workflows/dockerhub.yml)
 # GesetzeAPI
 An API to get German laws
 
