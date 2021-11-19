@@ -1,6 +1,6 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 02.06.21, 00:43.
+ * Last modified 19.11.21, 14:27.
  * Copyright (c) 2021.
  */
 
@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/books")
 public class BooksController {
 
-    @GetMapping("/")
+    @GetMapping()
     @Cacheable("books")
     public List<LawBookInfo> getLawBooks() {
         return GesetzeAPI.lawBooks.stream().map(lawBook -> LawBookInfo.builder().name(lawBook.getName()).title(lawBook.getTitle()).build()).collect(Collectors.toList());

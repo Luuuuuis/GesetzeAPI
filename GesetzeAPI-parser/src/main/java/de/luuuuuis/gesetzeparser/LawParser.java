@@ -1,6 +1,6 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 02.05.21, 13:50.
+ * Last modified 19.11.21, 14:37.
  * Copyright (c) 2021.
  */
 
@@ -31,7 +31,7 @@ public class LawParser {
             }
         }
 
-        StringJoiner sj = new StringJoiner("\\n");
+        StringJoiner sj = new StringJoiner("\n");
         for (Element div : document.select("div")) {
             if (div.hasAttr("class") && div.attr("class").equals("jurAbsatz")) {
                 sj.add(div.text());
