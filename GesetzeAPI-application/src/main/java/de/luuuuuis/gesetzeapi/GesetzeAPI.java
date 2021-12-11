@@ -1,6 +1,6 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 02.05.21, 13:52.
+ * Last modified 10.12.21, 18:13.
  * Copyright (c) 2021.
  */
 
@@ -17,6 +17,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -42,7 +43,7 @@ public class GesetzeAPI {
     private void parseLaws(String fileName) {
         StringBuilder stringBuilder = new StringBuilder();
 
-        try (BufferedReader in = new BufferedReader(new FileReader("/prod/laws/" + fileName))) {
+        try (BufferedReader in = new BufferedReader(new FileReader("/prod/laws/" + fileName, StandardCharsets.UTF_8))) {
             String line;
             while ((line = in.readLine()) != null) {
                 stringBuilder.append(line);
