@@ -1,22 +1,19 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 24.04.21, 23:40.
+ * Last modified 10.12.21, 17:41.
  * Copyright (c) 2021.
  */
 
 package de.luuuuuis.gesetzeapi;
 
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.resource.PathResourceResolver;
 
 @Configuration
-@EnableWebMvc
-@ComponentScan(basePackages = "de.luuuuuis.gesetzeapi")
+//@ComponentScan(basePackages = "de.luuuuuis.gesetzeapi")
 public class WebConfig implements WebMvcConfigurer {
 
     @Override

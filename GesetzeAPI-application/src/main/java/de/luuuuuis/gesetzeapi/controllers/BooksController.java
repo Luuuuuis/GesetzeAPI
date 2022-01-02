@@ -1,6 +1,6 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 19.11.21, 14:27.
+ * Last modified 10.12.21, 17:05.
  * Copyright (c) 2021.
  */
 
@@ -12,6 +12,8 @@ import de.luuuuuis.gesetzeapi.model.LawBook;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.nativex.hint.AotProxyHint;
+import org.springframework.nativex.hint.ProxyBits;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@AotProxyHint(targetClass = de.luuuuuis.gesetzeapi.controllers.BooksController.class, proxyFeatures = ProxyBits.IS_STATIC)
 @RestController
 @RequestMapping("/books")
 public class BooksController {
