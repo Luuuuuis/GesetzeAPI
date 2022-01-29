@@ -1,7 +1,7 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 02.05.21, 18:10.
- * Copyright (c) 2021.
+ * Last modified 29.01.22, 18:22.
+ * Copyright (c) 2022.
  */
 
 package de.luuuuuis.gesetzelibrary;
@@ -105,7 +105,7 @@ public class GesetzeLibrary {
      * @return A Law object with text, title, url, etc. {@link Law}
      */
     @SneakyThrows
-    public Law getLaw(String lawBook, int paragraph) {
+    public Law getLaw(String lawBook, String paragraph) {
         Response response = call("/books/" + lawBook + "/" + paragraph);
 
         return gson.fromJson(Objects.requireNonNull(response.body()).string(), Law.class);

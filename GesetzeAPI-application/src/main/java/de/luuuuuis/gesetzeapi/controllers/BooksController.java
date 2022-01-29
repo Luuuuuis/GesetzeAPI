@@ -1,7 +1,7 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 10.12.21, 17:05.
- * Copyright (c) 2021.
+ * Last modified 29.01.22, 18:19.
+ * Copyright (c) 2022.
  */
 
 package de.luuuuuis.gesetzeapi.controllers;
@@ -41,14 +41,15 @@ public class BooksController {
 
     @GetMapping("/{name}/{paragraph}")
     @Cacheable("law")
-    public Law getLaw(@PathVariable("name") String name, @PathVariable("paragraph") int paragraph) {
+    public Law getLaw(@PathVariable("name") String name, @PathVariable("paragraph") String paragraph) {
         return LawBookInfo.builder().name(name).title(name).build().getLawBook().getLaws().stream().filter(law ->
-                law.getParagraph().endsWith(String.valueOf(paragraph))).findFirst().orElseThrow();
+                law.getParagraph().endsWith(paragraph)).findFirst().orElseThrow();
     }
+
 
     @Builder
     @Getter
-    static class LawBookInfo {
+    private static final class LawBookInfo {
 
         private final String name, title;
 
