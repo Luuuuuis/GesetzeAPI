@@ -1,7 +1,7 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 19.11.21, 14:37.
- * Copyright (c) 2021.
+ * Last modified 08.02.22, 18:28.
+ * Copyright (c) 2022.
  */
 
 package de.luuuuuis.gesetzeparser;
@@ -39,9 +39,7 @@ public class LawParser {
         }
 
         lawBuilder.text(sj.toString());
-        Law law = lawBuilder.build();
 
-        System.out.println("Parsed law: " + law.toString());
-        return law;
+        return lawBuilder.build();
     }
 }

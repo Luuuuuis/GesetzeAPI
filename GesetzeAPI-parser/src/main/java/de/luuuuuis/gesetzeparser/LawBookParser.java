@@ -1,7 +1,7 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 02.05.21, 13:50.
- * Copyright (c) 2021.
+ * Last modified 08.02.22, 19:09.
+ * Copyright (c) 2022.
  */
 
 package de.luuuuuis.gesetzeparser;
@@ -35,14 +35,16 @@ public class LawBookParser {
                         Element a = td.selectFirst("a");
                         Law law = new LawParser(gesetzeParser, subPage.getUrl() + a.attr("href")).parse();
                         laws.add(law);
-
-                        Thread.sleep(500);
                     }
                 }
             }
             break;
         }
 
+        if (laws.isEmpty()) {
+            System.err.println("Not creating " + subPage.getTitle() + " because it has no laws");
+            return;
+        }
 
         LawBook lawBook = new LawBook(subPage.getName(), subPage.getTitle(), laws);
 

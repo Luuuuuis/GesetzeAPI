@@ -1,6 +1,6 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 29.01.22, 18:22.
+ * Last modified 08.02.22, 17:54.
  * Copyright (c) 2022.
  */
 
@@ -43,9 +43,6 @@ public class GesetzeLibrary {
     @Builder
     private GesetzeLibrary(@Nullable String baseUrl, boolean enableCache, int cacheSize) {
         this.baseUrl = Optional.ofNullable(baseUrl).orElse("https://gesetzeapi.luis.team");
-
-        System.out.println(enableCache);
-        System.out.println(cacheSize);
 
         Cache cache = null;
         if (enableCache) {

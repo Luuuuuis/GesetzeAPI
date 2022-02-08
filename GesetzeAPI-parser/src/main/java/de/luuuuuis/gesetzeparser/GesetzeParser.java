@@ -1,7 +1,7 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 02.05.21, 14:04.
- * Copyright (c) 2021.
+ * Last modified 08.02.22, 19:09.
+ * Copyright (c) 2022.
  */
 
 package de.luuuuuis.gesetzeparser;
@@ -21,6 +21,8 @@ import java.util.List;
 public class GesetzeParser {
 
     public static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    public List<SubPage> subPages = new ArrayList<>();
+    public int totalLaws = 0;
 
     @SneakyThrows
     public GesetzeParser() {
@@ -44,13 +46,25 @@ public class GesetzeParser {
                             String name = a.child(0).text();
                             String title = a.child(0).attr("title");
 
-                            new LawBookParser(this, new SubPage(url, name, title));
-                            Thread.sleep(500);
+                            System.out.println(title + " indexed");
+                            subPages.add(new SubPage(url, name, title));
                         }
                     }
                     break;
                 }
             }
+
+            Thread.sleep(500);
+        }
+
+        totalLaws = subPages.size();
+        List<SubPage> s2 = new ArrayList<>(subPages);
+
+        for (SubPage subPage : subPages) {
+            new LawBookParser(this, subPage);
+            s2.remove(subPage);
+
+            System.out.println(s2.size() + "/" + totalLaws + " left. (" + (double) Math.round(((1 - ((double) s2.size() / (double) totalLaws)) * 100) * 100) / 100 + "%)");
 
             Thread.sleep(500);
         }
@@ -61,6 +75,7 @@ public class GesetzeParser {
         File file = new File("laws/");
         if (!file.mkdir()) {
             System.err.println("Could not make directory");
+            return;
         }
 
         new GesetzeParser();

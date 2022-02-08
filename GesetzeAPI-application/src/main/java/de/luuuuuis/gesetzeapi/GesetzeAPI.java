@@ -1,7 +1,7 @@
 /*
  * Developed by Luuuuuis (@realluuuuuis)
- * Last modified 10.12.21, 18:13.
- * Copyright (c) 2021.
+ * Last modified 08.02.22, 18:19.
+ * Copyright (c) 2022.
  */
 
 package de.luuuuuis.gesetzeapi;
@@ -32,7 +32,7 @@ public class GesetzeAPI {
 
     public GesetzeAPI() {
         File file = new File("/prod/laws");
-        Arrays.stream(Objects.requireNonNull(file.list())).filter(s -> s.endsWith(".json")).forEach(this::parseLaws);
+        Arrays.stream(Objects.requireNonNull(file.list())).filter(s -> s.endsWith(".json")).forEach(this::parseLawFile);
     }
 
     public static void main(String[] args) {
@@ -40,7 +40,7 @@ public class GesetzeAPI {
     }
 
 
-    private void parseLaws(String fileName) {
+    private void parseLawFile(String fileName) {
         StringBuilder stringBuilder = new StringBuilder();
 
         try (BufferedReader in = new BufferedReader(new FileReader("/prod/laws/" + fileName, StandardCharsets.UTF_8))) {
