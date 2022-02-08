@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Developed by Luuuuuis (@realluuuuuis)
-  ~ Last modified 29.01.22, 18:48.
+  ~ Last modified 08.02.22, 21:24.
   ~ Copyright (c) 2022.
   -->
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -19,7 +19,7 @@
     <groupId>de.luuuuis</groupId>
     <artifactId>gesetzeapi-application</artifactId>
     <name>GesetzeAPI-application</name>
-    <version>1.2.1</version>
+    <version>1.3</version>
     <description>A Spring Boot REST server serving german law</description>
 
     <properties>
